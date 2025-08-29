@@ -1,0 +1,17 @@
+{
+  "cs": {
+    "title": "Vítejte na mém webu",
+    "subtitle": "ceska verze.",
+    "description": "You can switch languages anytime using the buttons above."
+  },
+  "en": {
+    "title": "Welcome to my website",
+    "subtitle": "Hello! This is the English version.",
+    "description": "You can switch languages anytime using the buttons above."
+  },
+  "de": {
+    "title": "Willkommen auf meiner Webseite",
+    "subtitle": "deutsche version",
+    "description": "Puedes cambiar de idioma en cualquier momento usando los botones de arriba."
+  }
+}

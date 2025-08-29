@@ -1,10 +1,193 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="cs">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <title>Název vaší společnosti/projektu</title>
+    <style>
+        button {
+            position: relative;
+            overflow: hidden;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .ripple span {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
 <body>
+    <div class="lang-switcher">
+        <button class="ripple" onclick="setLanguage('cs')">CS</button>
+        <button class="ripple" onclick="setLanguage('en')">EN</button>
+        <button class="ripple" onclick="setLanguage('de')">DE</button>
+    </div>
 
-<h1>Hello world</h1>
+    <script>
+        let translations = {};
 
+        async function loadTranslations() {
+            const response = await fetch("translations.json");
+            translations = await response.json();
 
+            // Load saved language or default to English
+            const savedLang = localStorage.getItem("lang") || "en";
+            setLanguage(savedLang);
+        }
 
-</body>
+        function setLanguage(lang) {
+            document.querySelectorAll("[data-translate]").forEach(el => {
+                const key = el.getAttribute("data-translate");
+                el.textContent = translations[lang][key];
+            });
+            localStorage.setItem("lang", lang);
+        }
+
+        // Initialize
+        loadTranslations();
+    </script>
+
+    <header>
+
+        <h1 data-translate="title" id="typing">Název vaší společnosti/projektu</h1>
+        <p data-translate="subtitle">Slogan, který vystihuje, co děláte.</p>
+    </header>
+
+    <nav>
+        <a href="#o-nas" class="scroll">O nás</a>
+        <a href="#sluzby" class="scroll">Služby</a>
+        <a href="#portfolio" class="scroll">Portfolio</a>
+        <a href="#kontakt" class="scroll">Kontakt</a>
+    </nav>
+
+    <div class="container">
+        <section  class="fade-in" id="o-nas" class="section">
+            <h2>O nás</h2>
+            <p>Zde se představte. Napište něco o historii vaší společnosti, vašich hodnotách a poslání. Můžete přidat příběh, jak jste začali, a co vás motivuje.</p>
+        </section>
+
+        <section class="fade-in" id="sluzby" class="section">
+            <h2>Naše služby</h2>
+            <p>Popište, co nabízíte. Můžete použít seznamy pro přehlednost. Každou službu krátce popište, aby zákazník věděl, co může očekávat.</p>
+            <ul>
+                <li><strong>Služba 1:</strong> Stručný popis první služby.</li>
+                <li><strong>Služba 2:</strong> Stručný popis druhé služby.</li>
+                <li><strong>Služba 3:</strong> Stručný popis třetí služby.</li>
+            </ul>
+        </section>
+
+        <section class="fade-in" id="portfolio" class="section">
+            <h2>Portfolio</h2>
+            <p>Ukažte své nejlepší práce. Můžete zde použít obrázky nebo odkazy na dokončené projekty, abyste doložili kvalitu vaší práce.</p>
+            <div style="text-align: center;">
+                <img src="[https://via.placeholder.com/300](https://via.placeholder.com/300)" alt="Projekt 1" style="margin: 10px;">
+                <img src="[https://via.placeholder.com/300](https://via.placeholder.com/300)" alt="Projekt 2" style="margin: 10px;">
+                <img src="[https://via.placeholder.com/300](https://via.placeholder.com/300)" alt="Projekt 3" style="margin: 10px;">
+            </div>
+        </section>
+
+        <section class="fade-in" id="kontakt" class="section">
+            <h2>Kontakt</h2>
+            <p>Jak vás mohou lidé kontaktovat? Uveďte zde e-mail, telefon, adresu a případně odkaz na kontaktní formulář.</p>
+            <p><strong>E-mail:</strong> <a href="mailto:info@vasweb.cz">info@vasweb.cz</a></p>
+            <p><strong>Telefon:</strong> +420 123 456 789</p>
+            <p><strong>Adresa:</strong> Ulice 123, 100 00 Město</p>
+        </section>
+    </div>
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <div class="fade-in">I will fade in when you scroll to me!</div>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2 };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+
+    <script>
+        document.querySelectorAll('.scroll').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))
+                    .scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <script>
+        const text = "Welcome to My Website!";
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+
+    <script>
+        document.querySelectorAll(".ripple").forEach(btn => {
+            btn.addEventListener("mouseenter", function(e) {
+                const circle = document.createElement("span");
+                const rect = btn.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                circle.style.width = circle.style.height = size + "px";
+                circle.style.left = e.clientX - rect.left - size / 2 + "px";
+                circle.style.top = e.clientY - rect.top - size / 2 + "px";
+                btn.appendChild(circle);
+                setTimeout(() => circle.remove(), 600);
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Název vaší společnosti. Všechna práva vyhrazena.</p>
+    </footer>
+    </body>
 </html>
