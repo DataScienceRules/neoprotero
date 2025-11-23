@@ -1,17 +1,43 @@
 {
   "cs": {
+    "menu_profile": "Profil",
+    "menu_timeline": "Cesta",
+    "menu_etymology": "Etymologie",
+    "menu_contact": "Kontakt",
+
     "title": "Vítejte na mém webu",
-    "subtitle": "ceska verze.",
-    "description": "You can switch languages anytime using the buttons above."
+    "subtitle": "ceska verze",
+    "s": "neco",
+    "description": "You can switch languages anytime using the buttons above.",
+    "profile_header": "Profil",
+    "profile_content": "Obsah profilu",
+    "journey_header": "Cesta",
+    "etymology_header":"Etymologie",
+    "etymology_content":"Etymologie",
+    "contact_header": "Kontakt"
   },
   "en": {
     "title": "Welcome to my website",
     "subtitle": "Hello! This is the English version.",
-    "description": "You can switch languages anytime using the buttons above."
+    "s": "neco",
+    "description": "You can switch languages anytime using the buttons above.",
+    "profile_header": "Profile",
+    "profile_content": "Profile content",
+    "journey_header": "Journey",
+    "etymology_header": "Etymology",
+    "etymology_content":"Etymologie",
+    "contact_header": "Contact"
   },
   "de": {
     "title": "Willkommen auf meiner Webseite",
     "subtitle": "deutsche version",
-    "description": "Puedes cambiar de idioma en cualquier momento usando los botones de arriba."
+    "s": "neco",
+    "description": "Puedes cambiar de idioma en cualquier momento usando los botones de arriba.",
+    "profile_header": "Das Profil",
+    "profile_content": "Profil Inhalt",
+    "journey_header": "Der Weg",
+    "etymology_header": "Die Etymologie",
+    "etymology_content":"Die Etymologie",
+    "contact_header": "Der Kontakt"
   }
 }

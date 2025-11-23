@@ -1,44 +1,309 @@
-body {
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
+    box-sizing: border-box;
 }
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
 }
-nav {
+
+/* Header / Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #111;
+    color: #fff;
     display: flex;
-    justify-content: center;
-    background-color: #333;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
 }
-nav a {
-    color: white;
-    padding: 14px 20px;
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Desktop Menu */
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: #0d3d6e;
     text-decoration: none;
-    text-align: center;
+    font-size: 1rem;
 }
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
+
+.nav a:hover {
+    text-decoration: underline;
 }
+
+/* Mobile Hamburger */
+.hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* Sections */
 .section {
-    padding: 40px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 6rem 1.5rem 4rem; /* extra top padding to compensate for fixed menu */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.section h2 {
-    text-align: center;
-    color: #4CAF50;
+
+.section.alt {
+    background: #7a99e7;
 }
-footer {
-    background-color: #333;
+
+.section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+body {
+    padding-top: 100px;
+    background: #111111;
     color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 20px;
+}
+
+/* Dropdown wrapper */
+.lang-dropdown {
+
+    display: block;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Selected flag */
+.selected-lang .flag {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Dropdown options */
+.lang-options {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    background: #111;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+
+}
+
+/* Show dropdown when parent is active */
+.lang-dropdown.open .lang-options {
+    display: flex;
+}
+
+.lang-options .flag {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.lang-options .flag:hover {
+    transform: scale(1.5);
+}
+/* ----- MOBILE STYLES ----- */
+
+@media (max-width: 768px) {
+
+    /* Hide desktop menu */
+    .nav {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: #111;
+        width: 300px;
+        flex-direction: column;
+        padding: 3rem;
+        display: none; /* hidden until opened */
+    }
+
+    .nav a {
+        padding: 0.75rem 0;
+        color: white;
+        font: bold 1rem/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* Add slide-down animation */
+    .nav.show {
+        display: flex;
+    }
+
+    /* Section */
+    .section {
+
+        padding: 0.5rem;
+        border-top: #111111 3px solid;
+        margin: 1px;
+        position: relative;
+        background-color: #0d3d6e;
+    }
+
+    /* Dropdown wrapper */
+    .lang-dropdown {
+
+        display: block;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Selected flag */
+    .selected-lang .flag {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .selected-lang .flag:hover {
+        transform: scale(1.5);
+    }
+
+    /* Dropdown options */
+    .lang-options {
+        position: relative;
+        top: 38px;
+        right: 0;
+        background: #111;
+        padding: 0.5rem;
+        border-radius: 8px;
+        display: none;
+        flex-direction: column;
+        gap: 0.8rem;
+
+    }
+
+    /* Show dropdown when parent is active */
+    .lang-dropdown.open .lang-options {
+        display: flex;
+    }
+
+    .lang-options .flag {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        cursor: pointer;
+        object-fit: cover;
+        transition: transform 0.2s ease;
+    }
+
+    .lang-options .flag:hover {
+        transform: scale(1.5);
+    }
+
+    /* timeline */
+
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+
+
+
+    /* Timeline */
+    .timeline {
+        border-left: 3px solid #444;
+        padding-left: 20px;
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: #444;
+        border-radius: 50%;
+        position: absolute;
+        left: -28px;
+        top: 5px;
+    }
+
+    .timeline-date {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    /* contacts */
+    .contact-options {
+        margin: 1rem;
+        display: flex;
+        position: relative;
+        gap: 2rem;
+
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1rem;
+        border-top: black;
+        border-width: 5px;
+        position: relative;
+        font: bold 1rem/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 }
