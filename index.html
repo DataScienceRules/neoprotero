@@ -13,32 +13,6 @@
     <link rel="manifest" href="favicon/site.webmanifest">
 
     <title>Neoprotero</title>
-    <style>
-        button {
-            position: relative;
-            overflow: hidden;
-            padding: 10px 20px;
-            border: none;
-            background: #007bff;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        .ripple span {
-            position: absolute;
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            background: rgba(255, 255, 255, 0.6);
-        }
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-    </style>
 </head>
 
 <!-- Navigation -->
@@ -48,10 +22,10 @@
 
 
     <nav id="nav-menu" class="nav">
-        <a href="#profile" onclick="closeMenu()" class="scroll" data-translate="menu_profile"></a>
-        <a href="#journey" onclick="closeMenu()" class="scroll" data-translate="menu_journey"></a>
-        <a href="#etymology" onclick="closeMenu()" class="scroll" data-translate="menu_etymology"></a>
-        <a href="#contact" onclick="closeMenu()" class="scroll" data-translate="menu_contact"></a>
+        <a href="#profile" class="scroll" data-translate="menu_profile"></a>
+        <a href="#journey" class="scroll" data-translate="menu_journey"></a>
+        <a href="#etymology" class="scroll" data-translate="menu_etymology"></a>
+        <a href="#contact" class="scroll" data-translate="menu_contact"></a>
         <div class="lang-dropdown">
             <div class="selected-lang">
                 <img src="flags/icons8-czech-republic-50.png" class="flag" data-lang="cs" alt="Czech">
@@ -66,9 +40,11 @@
         </div>
     </nav>
 
+
     <div class="hamburger" id="hamburger">
         ☰
     </div>
+
 </header>
 
 <!-- Menu and Language switcher -->
@@ -130,50 +106,156 @@
             <p></p>
 
             <div class="timeline">
+                <div class="timeline_svg_wrapper">
+                <svg id="timelineSvg"
+                     class="timelineSvg"
+                     viewBox="130 0 200 1000"
+                     >
+                    <!-- Your windy / loopy line -->
+                    <path id="timelinePath"
+                          d="M300 20
+                            C 280 120, 120 220, 200 320
+                            C 320 380, 80 460, 200 520
+                            C 260 560, 260 640, 200 680
+                            C 150 740, 300 820, 240 900
+                            C 180 980, 330 1040, 260 1120
+                            C 190 1200, 340 1300, 220 1380
+
+                           "
+                          stroke="#ffd0a8"
+                          stroke-dasharray="11 11"
+                          fill="none"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          />
+                </svg>
+                </div>
+                <script>
+                    function alignTimelinePoints() {
+                        const svg   = document.getElementById("timelineSvg");
+                        const path  = document.getElementById("timelinePath");
+                        const items = document.querySelectorAll(".timeline-item");
+
+                        if (!svg || !path || !items.length) return;
+
+                        const svgRect = svg.getBoundingClientRect();
+                        const vb = svg.viewBox.baseVal; // { x, y, width, height }
+                        const totalLength = path.getTotalLength();
+
+                        // remove old points
+                        svg.querySelectorAll(".timeline-point").forEach(c => c.remove());
+
+                        items.forEach(item => {
+                            // 👉 use the DATE element as the target, not the whole item
+                            const dateEl = item.querySelector(".timeline-date");
+                            const targetEl = dateEl || item; // fallback to item if no date
+                            const rect = targetEl.getBoundingClientRect();
+                            const targetScreenY = rect.top + rect.height / 2; // vertical center of the date
+
+                            const steps = 250; // sampling resolution
+                            let best = {
+                                len: 0,
+                                x: 0,
+                                y: 0,
+                                diff: Infinity
+                            };
+
+                            for (let i = 0; i <= steps; i++) {
+                                const len = (totalLength * i) / steps;
+                                const p = path.getPointAtLength(len); // SVG coords
+
+                                // convert SVG Y -> screen Y
+                                const screenY =
+                                    svgRect.top + ((p.y - vb.y) / vb.height) * svgRect.height;
+
+                                const diff = Math.abs(screenY - targetScreenY);
+                                if (diff < best.diff) {
+                                    best = { len, x: p.x, y: p.y, diff };
+                                }
+                            }
+
+                            // ⭐ bigger, more visible point
+                            const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                            circle.setAttribute("class", "timeline-point");
+                            circle.setAttribute("cx", best.x);
+                            circle.setAttribute("cy", best.y);
+                            circle.setAttribute("r", "10");          // was 7 → bigger
+                            circle.setAttribute("fill", "#ffeba8");
+                            circle.setAttribute("stroke", "#0b3636");
+                            circle.setAttribute("stroke-width", "4"); // thicker outline
+
+                            svg.appendChild(circle);
+                        });
+                    }
+
+                    document.addEventListener("DOMContentLoaded", alignTimelinePoints);
+                    window.addEventListener("resize", alignTimelinePoints);
+
+
+                </script>
+
+            <div class="timeline-text">
                 <div class="timeline-item">
-                    <div>
-                        <h2 class="timeline-date">2017</h2>
-                        <p>Lorem ipsum..</p>
-                    </div>
+                    <h2 class="timeline-date">2017</h2>
+                    <p>Lorem ipsum...</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h2 class="timeline-date">2016</h2>
+                    <p>Lorem ipsum...</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h2 class="timeline-date">2015</h2>
+                    <p>Lorem ipsum...</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h2 class="timeline-date">2014</h2>
+                    <p>Lorem ipsum...</p>
                 </div>
                 <div class="timeline-item">
-                    <div>
-                        <h2 class="timeline-date">2016</h2>
-                        <p>Lorem ipsum..</p>
-                    </div>
+                    <h2 class="timeline-date">2014</h2>
+                    <p>Lorem ipsum...</p>
                 </div>
-                <div class="timeline-item">
-                    <div>
-                        <h2 class="timeline-date">2015</h2>
-                        <p>Lorem ipsum..</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div>
-                        <h2 class="timeline-date">2014</h2>
-                        <p>Lorem ipsum..</p>
-                    </div>
-                </div>
+            </div>
             </div>
         </section>
 
         <section id="etymology" class="section">
             <h2 data-translate="etymology_header">Emytologie</h2>
-            <div style="text-align: center;">
+            <div>
             <p></p>
             </div>
         </section>
 
         <section id="contact" class="section">
             <h2 data-translate="contact_header">Kontakt</h2>
+
             <div class="contact-options">
-                <a href="https://wa.me/420721903790" target="_blank"><img src="flags/whatsapp.png" class="network"></a>
-                <a href="https://www.linkedin.com/in/krystof-brzak" target="_blank"><img src="flags/linkedin.png" class="network"></a>
-                <a href="mailto:krystof.brzak@gmail.com" target="_blank"><img src="flags/email.png" class="network"></a>
+                <a class="jump" href="https://wa.me/420721903790" target="_blank"><img alt="WhatsApp" src="flags/whatsapp.png" class="network"></a>
+                <a class="jump" href="https://www.linkedin.com/in/krystof-brzak" target="_blank"><img alt="Linkedin" src="flags/linkedin.png" class="network"></a>
+                <a class="jump" href="mailto:krystof.brzak@gmail.com" target="_blank"><img alt="Email" src="flags/email.png" class="network"></a>
             </div>
         </section>
-    </div>
 
+    </div>
+    <script>
+
+        const elements = document.querySelectorAll(".jump");
+
+        elements.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                el.classList.add("animate");
+
+                // remove after animation so it can repeat
+                setTimeout(() => {
+                    el.classList.remove("animate");
+                }, 400);
+            });
+        });
+
+    </script>
     <script>
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = { threshold: 0.2 };

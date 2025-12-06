@@ -3,11 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /*color: #0a899c;*/
+    /*color: #023b42;   #012327*/
+    color: #FFF5D9;
 }
 
 html {
     scroll-behavior: smooth;
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
+
 }
 
 /* Header / Navigation */
@@ -16,8 +20,8 @@ html {
     top: 0;
     width: 100%;
     padding: 1rem 1.5rem;
-    background: #111;
-    color: #fff;
+    background: #091111;
+    color: #ffd0a8;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,13 +40,9 @@ html {
 }
 
 .nav a {
-    color: #0d3d6e;
-    text-decoration: none;
-    font-size: 1rem;
-}
 
-.nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+
 }
 
 /* Mobile Hamburger */
@@ -50,15 +50,27 @@ html {
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
+
+    color: #FFF5D9;
 }
 
 /* Sections */
 .section {
-    padding: 6rem 1.5rem 4rem; /* extra top padding to compensate for fixed menu */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 6rem 1.5rem 1.5rem; /* extra top padding to compensate for fixed menu */
+    margin: 0 auto;
+    border-width: 20px;
+    min-height: 30vh;
+    display: compact;
+    border-radius: 30px;
+    border-color: white;
+    text-align: center;
+    background-color: #023b42;
+
+}
+
+.contact-options {
+    margin: auto;
+
 }
 
 .section.alt {
@@ -68,13 +80,14 @@ html {
 .section h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    position: relative;
 
 }
 
 body {
     padding-top: 100px;
-    background: #111111;
-    color: white;
+    background: #091111;
+    color: #ffd0a8;
 }
 
 /* Dropdown wrapper */
@@ -129,46 +142,67 @@ body {
 .lang-options .flag:hover {
     transform: scale(1.5);
 }
+/* ----- --------------------------------------------- ----- */
+
 /* ----- MOBILE STYLES ----- */
 
+/* ----- --------------------------------------------- ----- */
 @media (max-width: 768px) {
 
     /* Hide desktop menu */
     .nav {
-        position: absolute;
+        position: fixed;
         top: 50px;
         right: 0;
         background: #111;
-        width: 300px;
+        width: 100vw;
+        height: 100vh;
         flex-direction: column;
         padding: 3rem;
-        display: none; /* hidden until opened */
+        /* hidden until opened */
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        font-size: 20px;
     }
 
-    .nav a {
-        padding: 0.75rem 0;
-        color: white;
-        font: bold 1rem/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* when we add .show it slides in */
+    .nav.show {
+        right: 0;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(0);
     }
+
 
     /* Show hamburger */
     .hamburger {
         display: block;
     }
 
-    /* Add slide-down animation */
-    .nav.show {
-        display: flex;
+    .scroll {
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        text-decoration: none;
+        color: #FFF5D9;
+    }
+
+    .scroll:hover {
+        background-color: #023b42;
+        text-decoration: none;
     }
 
     /* Section */
     .section {
 
-        padding: 0.5rem;
+        padding: 1rem;
         border-top: #111111 3px solid;
-        margin: 1px;
+        margin: 25px;
         position: relative;
-        background-color: #0d3d6e;
+        background-color: #023b42;
+        border-radius: 30px;
+
     }
 
     /* Dropdown wrapper */
@@ -177,14 +211,15 @@ body {
         display: block;
         align-items: center;
         gap: 1rem;
+        margin-left: 20px;
     }
 
     /* Selected flag */
     .selected-lang .flag {
-        width: 28px;
-        height: 28px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        border: 2px solid #fff;
+        border: 2px solid #FFF5D9;
         object-fit: cover;
         display: flex;
         align-items: center;
@@ -197,13 +232,13 @@ body {
     /* Dropdown options */
     .lang-options {
         position: relative;
-        top: 38px;
+        top: 20px;
         right: 0;
         background: #111;
         padding: 0.5rem;
         border-radius: 8px;
         display: none;
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.8rem;
 
     }
@@ -214,10 +249,10 @@ body {
     }
 
     .lang-options .flag {
-        width: 28px;
-        height: 28px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        border: 2px solid #fff;
+        border: 2px solid #FFF5D9;
         cursor: pointer;
         object-fit: cover;
         transition: transform 0.2s ease;
@@ -227,27 +262,16 @@ body {
         transform: scale(1.5);
     }
 
-    /* timeline */
 
-    /* Place the timelime to the left */
-    .timeline::after {
-        left: 31px;
-    }
 
     /* Full-width containers */
     .container {
         width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
+        padding-bottom: 25px;
+
     }
 
-    /* Make sure that all arrows are pointing leftwards */
-    .container::before {
-        left: 60px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-    }
+
 
     /* Make sure all circles are at the same spot */
     .left::after, .right::after {
@@ -256,47 +280,80 @@ body {
 
     /* Make all right containers behave like the left ones */
     .right {
-        left: 0%;
+        left: 0;
     }
 
 
 
     /* Timeline */
     .timeline {
-        border-left: 3px solid #444;
-        padding-left: 20px;
-        margin: 20px 0;
+        display: flex;
+
+        gap:0;              /* space between line and text */
+        max-width: 750px;
+        margin: 0 auto;         /* center the whole section */
+        padding: 40px 10px;
+
+
     }
+    .timeline_svg_wrapper{
+        flex: 0 0 100px;
+        height: 100%;
+        position: relative;
+        margin-left: 1px;
+    }
+    .timeline-layout {
+        display: flex;
+        align-items: stretch;     /* <-- ensures both columns stretch equally */
+    }
+    #timelineSvg {
+        height: 100%;             /* <-- KEY: fill entire parent height */
+        width: auto;              /* keep aspect ratio vertically */
+        display: block;
+
+    }
+
+    .timeline-text {
+        display: flex;
+        flex-direction: column;
+    }
+
 
     .timeline-item {
         margin-bottom: 30px;
         position: relative;
     }
 
-    .timeline-item::before {
-        content: "";
-        width: 14px;
-        height: 14px;
-        background: #444;
-        border-radius: 50%;
-        position: absolute;
-        left: -28px;
-        top: 5px;
-    }
-
     .timeline-date {
         font-weight: bold;
         margin-bottom: 5px;
-        color: #555;
+        color: #ffd0a8;
+        text-align: left;
     }
+
     /* contacts */
     .contact-options {
-        margin: 1rem;
-        display: flex;
+        margin: auto;
         position: relative;
-        gap: 2rem;
-
     }
+    .network {
+        padding: 20px;
+    }
+    .jump {
+        display: inline-block;
+    }
+
+    .jump.animate {
+        animation: jump 0.4s ease;
+    }
+
+    @keyframes jump {
+        0%   { transform: translateY(0); }
+        30%  { transform: translateY(-8px); }
+        60%  { transform: translateY(0); }
+        100% { transform: translateY(-4px); }
+    }
+
 
     /* Footer */
     .footer {
