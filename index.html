@@ -12,6 +12,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+
     <title>Neoprotero</title>
 </head>
 
@@ -99,6 +101,7 @@
         <section id="profile" class="section">
             <h2 data-translate="profile_header"></h2>
             <p data-translate="profile_content"></p>
+            <img src="photos/profile.jpg" alt="Profile" class="timeline_photo">
         </section>
 
         <section id="journey" class="section">
@@ -196,42 +199,46 @@
 
             <div class="timeline-text">
                 <div class="timeline-item">
-                    <h2 class="timeline-date">2017</h2>
-                    <p>Lorem ipsum...</p>
+                    <h3 class="timeline-date">2024</h3>
+                    <p data-translate="journey1"></p>
                 </div>
 
                 <div class="timeline-item">
-                    <h2 class="timeline-date">2016</h2>
-                    <p>Lorem ipsum...</p>
+                    <h3 class="timeline-date">2023</h3>
+                    <p data-translate="journey2"></p>
+                    <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
                 </div>
 
                 <div class="timeline-item">
-                    <h2 class="timeline-date">2015</h2>
-                    <p>Lorem ipsum...</p>
+                    <h3 class="timeline-date">2021</h3>
+                    <p data-translate="journey3"></p>
+                    <img alt="WhatsApp" src="photos/nomad2.jpg" class="timeline_photo">
                 </div>
 
                 <div class="timeline-item">
-                    <h2 class="timeline-date">2014</h2>
-                    <p>Lorem ipsum...</p>
+                    <h3 class="timeline-date">2017</h3>
+                    <p data-translate="journey4"></p>
                 </div>
                 <div class="timeline-item">
-                    <h2 class="timeline-date">2014</h2>
-                    <p>Lorem ipsum...</p>
+                    <h3 class="timeline-date">2016</h3>
+                    <p data-translate="journey5"></p>
+                    <img alt="WhatsApp" src="photos/staz.jpg" class="timeline_photo">
                 </div>
             </div>
             </div>
         </section>
 
-        <section id="etymology" class="section">
-            <h2 data-translate="etymology_header">Emytologie</h2>
-            <div>
-            <p></p>
+        <section id="etymology" class="canv_section">
+            <canvas id="cellCanvas" class="canvas"></canvas>
+            <div class="behind_canvas">
+                <h2 data-translate="etymology_header"></h2>
+                <p id=emycontent" data-translate="etymology_content"></p>
             </div>
         </section>
 
         <section id="contact" class="section">
             <h2 data-translate="contact_header">Kontakt</h2>
-
+            <p data-translate="contact_content"></p>
             <div class="contact-options">
                 <a class="jump" href="https://wa.me/420721903790" target="_blank"><img alt="WhatsApp" src="flags/whatsapp.png" class="network"></a>
                 <a class="jump" href="https://www.linkedin.com/in/krystof-brzak" target="_blank"><img alt="Linkedin" src="flags/linkedin.png" class="network"></a>
@@ -240,6 +247,12 @@
         </section>
 
     </div>
+    <script>
+        document.getElementById("emycontent").textContent =
+            translations.welcome;
+
+
+    </script>
     <script>
 
         const elements = document.querySelectorAll(".jump");
@@ -257,7 +270,7 @@
 
     </script>
     <script>
-        const faders = document.querySelectorAll('.fade-in');
+        const faders = document.querySelectorAll('.timeline-item');
         const appearOptions = { threshold: 0.2 };
 
         const appearOnScroll = new IntersectionObserver(function(entries, observer) {
@@ -296,12 +309,30 @@
         });
     </script>
 
+    <script>
+        function toclipboard() {
+            // Get the text field
+            var copyText = document.getElementById("krystof.brzak@gmail.com");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
+
     <footer class="footer">
-        <p>&copy; 2025 Název vaší společnosti. Všechna práva vyhrazena.</p>
+        <p data-translate="footer"></p>
     </footer>
 
     <!-- Load language -->
     <script src="javascripts.js"></script>
+    <script src="life_simulator.js"></script>
 
     </body>
 </html>
