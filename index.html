@@ -14,14 +14,18 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
     <title>Neoprotero</title>
 </head>
 
 <!-- Navigation -->
 <header class="header">
-    <div class="logo"></div>
-
-
+    <div>
+        <img src="photos/monogram.png" alt="KB" class="monogram">
+    </div>
 
     <nav id="nav-menu" class="nav">
         <a href="#profile" class="scroll" data-translate="menu_profile"></a>
@@ -46,6 +50,8 @@
     <div class="hamburger" id="hamburger">
         ☰
     </div>
+
+
 
 </header>
 
@@ -88,7 +94,7 @@
 </script>
 
 <body>
-
+<!--    <img src="photos/prague_background.jpg" class="background_photo" alt="Nothing">-->
     <header>
 
         <h1 data-translate="title"></h1>
@@ -100,131 +106,118 @@
     <div class="container">
         <section id="profile" class="section">
             <h2 data-translate="profile_header"></h2>
-            <p data-translate="profile_content"></p>
-            <img src="photos/profile.jpg" alt="Profile" class="timeline_photo">
+            <div class="card-pack">
+                <div id=profile_photo_card class="card">
+                    <img src="photos/profile_small_nobg.png" alt="Profile" class="profile_photo"/>
+                    <!-- Rounded rectangle label -->
+                    <div class="label label-rect" data-translate="tag">
+
+                    </div>
+                    <div class="label label-rect2">
+
+                    </div>
+                    <!-- Pentagon label -->
+                    <div class="label label-pentagon">
+                        <img class="label jet" src="photos/jet.png", alt="jet">
+                    </div>
+
+                    <div class="label label-pentagon2">
+                    </div>
+
+                </div>
+                <div class="card">
+                    <p data-translate="profile_content"></p>
+                </div>
+                <div id="traits" class="card">
+                    <div class="trait">
+                        <div class="trait-labels"  style="--left-weight: 600;
+                         --right-weight: 800;
+                         --left-size: 0.85rem;
+                        --right-size: 1rem;">
+                            <span data-translate="label1"></span>
+                            <span data-translate="label2"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <div class="trait-labels" style="--left-weight: 600;
+                         --right-weight: 800;
+                         --left-size: 0.85rem;
+                        --right-size: 1rem;">
+                            <span data-translate="label3"></span>
+                            <span data-translate="label4"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <div class="trait-labels" style="--left-weight: 800;
+                         --right-weight: 600;
+                         --left-size: 1rem;
+                        --right-size: 0.85rem;">
+                            <span data-translate="label5"></span>
+                            <span data-translate="label6"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 30%"></div>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <div class="trait-labels" style="--left-weight: 800;
+                         --right-weight: 600;
+                         --left-size: 1rem;
+                        --right-size: 0.85rem;">
+                            <span data-translate="label7"></span>
+                            <span data-translate="label8"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <p data-translate="profile_content2"></p>
+                </div>
+            </div>
         </section>
 
         <section id="journey" class="section">
             <h2 data-translate="journey_header">Cesta</h2>
-            <p></p>
 
             <div class="timeline">
-                <div class="timeline_svg_wrapper">
-                <svg id="timelineSvg"
-                     class="timelineSvg"
-                     viewBox="130 0 200 1000"
-                     >
-                    <!-- Your windy / loopy line -->
-                    <path id="timelinePath"
-                          d="M300 20
-                            C 280 120, 120 220, 200 320
-                            C 320 380, 80 460, 200 520
-                            C 260 560, 260 640, 200 680
-                            C 150 740, 300 820, 240 900
-                            C 180 980, 330 1040, 260 1120
-                            C 190 1200, 340 1300, 220 1380
+                    <div class="timeline-item right">
+                        <h3 class="timeline-date">2024</h3>
+                        <p data-translate="journey1"></p>
+                    </div>
 
-                           "
-                          stroke="#ffd0a8"
-                          stroke-dasharray="11 11"
-                          fill="none"
-                          stroke-width="4"
-                          stroke-linecap="round"
-                          />
-                </svg>
-                </div>
-                <script>
-                    function alignTimelinePoints() {
-                        const svg   = document.getElementById("timelineSvg");
-                        const path  = document.getElementById("timelinePath");
-                        const items = document.querySelectorAll(".timeline-item");
+                    <div class="timeline-item left">
+                        <h3 class="timeline-date">2023</h3>
+                        <p data-translate="journey2"></p>
+                        <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
+                    </div>
 
-                        if (!svg || !path || !items.length) return;
+                    <div class="timeline-item right">
+                        <h3 class="timeline-date">2021</h3>
+                        <p data-translate="journey3"></p>
+                        <img alt="WhatsApp" src="photos/nomad2.jpg" class="timeline_photo">
+                    </div>
 
-                        const svgRect = svg.getBoundingClientRect();
-                        const vb = svg.viewBox.baseVal; // { x, y, width, height }
-                        const totalLength = path.getTotalLength();
-
-                        // remove old points
-                        svg.querySelectorAll(".timeline-point").forEach(c => c.remove());
-
-                        items.forEach(item => {
-                            // 👉 use the DATE element as the target, not the whole item
-                            const dateEl = item.querySelector(".timeline-date");
-                            const targetEl = dateEl || item; // fallback to item if no date
-                            const rect = targetEl.getBoundingClientRect();
-                            const targetScreenY = rect.top + rect.height / 2; // vertical center of the date
-
-                            const steps = 250; // sampling resolution
-                            let best = {
-                                len: 0,
-                                x: 0,
-                                y: 0,
-                                diff: Infinity
-                            };
-
-                            for (let i = 0; i <= steps; i++) {
-                                const len = (totalLength * i) / steps;
-                                const p = path.getPointAtLength(len); // SVG coords
-
-                                // convert SVG Y -> screen Y
-                                const screenY =
-                                    svgRect.top + ((p.y - vb.y) / vb.height) * svgRect.height;
-
-                                const diff = Math.abs(screenY - targetScreenY);
-                                if (diff < best.diff) {
-                                    best = { len, x: p.x, y: p.y, diff };
-                                }
-                            }
-
-                            // ⭐ bigger, more visible point
-                            const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                            circle.setAttribute("class", "timeline-point");
-                            circle.setAttribute("cx", best.x);
-                            circle.setAttribute("cy", best.y);
-                            circle.setAttribute("r", "10");          // was 7 → bigger
-                            circle.setAttribute("fill", "#ffeba8");
-                            circle.setAttribute("stroke", "#0b3636");
-                            circle.setAttribute("stroke-width", "4"); // thicker outline
-
-                            svg.appendChild(circle);
-                        });
-                    }
-
-                    document.addEventListener("DOMContentLoaded", alignTimelinePoints);
-                    window.addEventListener("resize", alignTimelinePoints);
-
-
-                </script>
-
-            <div class="timeline-text">
-                <div class="timeline-item">
-                    <h3 class="timeline-date">2024</h3>
-                    <p data-translate="journey1"></p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-date">2023</h3>
-                    <p data-translate="journey2"></p>
-                    <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-date">2021</h3>
-                    <p data-translate="journey3"></p>
-                    <img alt="WhatsApp" src="photos/nomad2.jpg" class="timeline_photo">
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="timeline-date">2017</h3>
-                    <p data-translate="journey4"></p>
-                </div>
-                <div class="timeline-item">
-                    <h3 class="timeline-date">2016</h3>
-                    <p data-translate="journey5"></p>
-                    <img alt="WhatsApp" src="photos/staz.jpg" class="timeline_photo">
-                </div>
-            </div>
+                    <div class="timeline-item left">
+                        <h3 class="timeline-date">2017</h3>
+                        <p data-translate="journey4"></p>
+                    </div>
+                    <div class="timeline-item right">
+                        <h3 class="timeline-date">2016</h3>
+                        <p data-translate="journey5"></p>
+                        <img alt="WhatsApp" src="photos/staz.jpg" class="timeline_photo">
+                    </div>
             </div>
         </section>
 
@@ -334,5 +327,6 @@
     <script src="javascripts.js"></script>
     <script src="life_simulator.js"></script>
 
-    </body>
+
+</body>
 </html>
