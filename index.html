@@ -1,9 +1,331 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="cs">
+<head>
+    <!--<script src="javascripts.js"></script>-->
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <title>Neoprotero</title>
+</head>
+
+<!-- Navigation -->
+<header class="header">
+    <div>
+        <img src="photos/monogram.png" alt="KB" class="monogram">
+    </div>
+
+    <nav id="nav-menu" class="nav">
+        <a href="#profile" class="scroll" data-translate="menu_profile"></a>
+        <a href="#journey" class="scroll" data-translate="menu_journey"></a>
+        <a href="#etymology" class="scroll" data-translate="menu_etymology"></a>
+        <a href="#contact" class="scroll" data-translate="menu_contact"></a>
+        <div class="lang-dropdown">
+            <div class="selected-lang">
+                <img src="flags/icons8-czech-republic-50.png" class="flag" data-lang="cs" alt="Czech">
+            </div>
+
+            <div class="lang-options">
+                <img src="flags/icons8-czech-republic-50.png" class="flag" data-lang="cs" alt="Czech" onclick="setLanguage('cs')">
+                <img src="flags/icons8-great-britain-50.png" class="flag" data-lang="en" alt="English" onclick="setLanguage('en')">
+                <img src="flags/icons8-germany-50.png" class="flag" data-lang="de" alt="German" onclick="setLanguage('de')">
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="hamburger" id="hamburger">
+        ☰
+    </div>
+
+
+
+</header>
+
+<!-- Menu and Language switcher -->
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    const langDropdown = document.querySelector('.lang-dropdown');
+    const selectedLang = document.querySelector('.selected-lang img');
+    const langOptions = document.querySelectorAll('.lang-options .flag');
+
+    // Toggle hamburger menu
+    hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();           // prevent click from bubbling
+        navMenu.classList.toggle("show");
+    });
+
+    // Toggle language dropdown
+    langDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('open');
+    });
+
+    // When selecting a language
+    langOptions.forEach(flag => {
+        flag.addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectedLang.src = e.target.src;
+            langDropdown.classList.remove('open');
+        });
+    });
+
+    // CLOSE EVERYTHING ON OUTSIDE CLICK
+    document.addEventListener('click', () => {
+        navMenu.classList.remove("show");
+        langDropdown.classList.remove("open");
+    });
+
+</script>
+
 <body>
+<!--    <img src="photos/prague_background.jpg" class="background_photo" alt="Nothing">-->
+    <header>
 
-<h1>Hello world</h1>
+        <h1 data-translate="title"></h1>
+        <p data-translate="subtitle"></p>
+        <p data-translate="s"></p>
 
+    </header>
+
+    <div class="container">
+        <section id="profile" class="section">
+            <h2 data-translate="profile_header"></h2>
+            <div class="card-pack">
+                <div id=profile_photo_card class="card">
+                    <img src="photos/profile_small_nobg.png" alt="Profile" class="profile_photo"/>
+                    <!-- Rounded rectangle label -->
+                    <div class="label label-rect" data-translate="tag">
+
+                    </div>
+                    <div class="label label-rect2">
+
+                    </div>
+                    <!-- Pentagon label -->
+                    <div class="label label-pentagon">
+                        <img class="label jet" src="photos/jet.png", alt="jet">
+                    </div>
+
+                    <div class="label label-pentagon2">
+                    </div>
+
+                </div>
+                <div class="card">
+                    <p data-translate="profile_content"></p>
+                </div>
+                <div id="traits" class="card">
+                    <div class="trait">
+                        <div class="trait-labels"  style="--left-weight: 600;
+                         --right-weight: 800;
+                         --left-size: 0.85rem;
+                        --right-size: 1rem;">
+                            <span data-translate="label1"></span>
+                            <span data-translate="label2"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <div class="trait-labels" style="--left-weight: 600;
+                         --right-weight: 800;
+                         --left-size: 0.85rem;
+                        --right-size: 1rem;">
+                            <span data-translate="label3"></span>
+                            <span data-translate="label4"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <div class="trait-labels" style="--left-weight: 800;
+                         --right-weight: 600;
+                         --left-size: 1rem;
+                        --right-size: 0.85rem;">
+                            <span data-translate="label5"></span>
+                            <span data-translate="label6"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 30%"></div>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <div class="trait-labels" style="--left-weight: 800;
+                         --right-weight: 600;
+                         --left-size: 1rem;
+                        --right-size: 0.85rem;">
+                            <span data-translate="label7"></span>
+                            <span data-translate="label8"></span>
+                        </div>
+                        <div class="slider">
+                            <div class="fill" style="--value: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <p data-translate="profile_content2"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="section">
+            <h2 data-translate="journey_header">Cesta</h2>
+
+            <div class="timeline">
+                    <div class="timeline-item right">
+                        <h3 class="timeline-date">2024</h3>
+                        <p data-translate="journey1"></p>
+                    </div>
+
+                    <div class="timeline-item left">
+                        <h3 class="timeline-date">2023</h3>
+                        <p data-translate="journey2"></p>
+                        <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
+                    </div>
+
+                    <div class="timeline-item right">
+                        <h3 class="timeline-date">2021</h3>
+                        <p data-translate="journey3"></p>
+                        <img alt="WhatsApp" src="photos/nomad2.jpg" class="timeline_photo">
+                    </div>
+
+                    <div class="timeline-item left">
+                        <h3 class="timeline-date">2017</h3>
+                        <p data-translate="journey4"></p>
+                    </div>
+                    <div class="timeline-item right">
+                        <h3 class="timeline-date">2016</h3>
+                        <p data-translate="journey5"></p>
+                        <img alt="WhatsApp" src="photos/staz.jpg" class="timeline_photo">
+                    </div>
+            </div>
+        </section>
+
+        <section id="etymology" class="canv_section">
+            <canvas id="cellCanvas" class="canvas"></canvas>
+            <div class="behind_canvas">
+                <h2 data-translate="etymology_header"></h2>
+                <p id=emycontent" data-translate="etymology_content"></p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 data-translate="contact_header">Kontakt</h2>
+            <p data-translate="contact_content"></p>
+            <div class="contact-options">
+                <a class="jump" href="https://wa.me/420721903790" target="_blank"><img alt="WhatsApp" src="flags/whatsapp.png" class="network"></a>
+                <a class="jump" href="https://www.linkedin.com/in/krystof-brzak" target="_blank"><img alt="Linkedin" src="flags/linkedin.png" class="network"></a>
+                <a class="jump" href="mailto:krystof.brzak@gmail.com" target="_blank"><img alt="Email" src="flags/email.png" class="network"></a>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        document.getElementById("emycontent").textContent =
+            translations.welcome;
+
+
+    </script>
+    <script>
+
+        const elements = document.querySelectorAll(".jump");
+
+        elements.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                el.classList.add("animate");
+
+                // remove after animation so it can repeat
+                setTimeout(() => {
+                    el.classList.remove("animate");
+                }, 400);
+            });
+        });
+
+    </script>
+    <script>
+        const faders = document.querySelectorAll('.timeline-item');
+        const appearOptions = { threshold: 0.2 };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+
+    <script>
+        document.querySelectorAll('.scroll').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))
+                    .scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll(".ripple").forEach(btn => {
+            btn.addEventListener("mouseenter", function(e) {
+                const circle = document.createElement("span");
+                const rect = btn.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                circle.style.width = circle.style.height = size + "px";
+                circle.style.left = e.clientX - rect.left - size / 2 + "px";
+                circle.style.top = e.clientY - rect.top - size / 2 + "px";
+                btn.appendChild(circle);
+                setTimeout(() => circle.remove(), 600);
+            });
+        });
+    </script>
+
+    <script>
+        function toclipboard() {
+            // Get the text field
+            var copyText = document.getElementById("krystof.brzak@gmail.com");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
+
+    <footer class="footer">
+        <p data-translate="footer"></p>
+    </footer>
+
+    <!-- Load language -->
+    <script src="javascripts.js"></script>
+    <script src="life_simulator.js"></script>
 
 
 </body>

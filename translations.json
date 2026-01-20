@@ -1,0 +1,66 @@
+{
+  "cs": {
+    "menu_profile": "Profil",
+    "menu_journey": "Cesta",
+    "menu_etymology": "Etymologie",
+    "menu_contact": "Kontakt",
+
+    "title": "Vítejte na mém webu",
+    "subtitle": "",
+    "s": "",
+    "description": "You can switch languages anytime using the buttons above.",
+    "profile_header": "Profil",
+    "tag": "Kryštof Brzák",
+    "profile_content": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
+    "profile_content2": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
+
+    "label1": "Spolupracující",
+    "label2": "Nezávislý",
+    "label3": "Rezervovaný",
+    "label4": "Družný",
+    "label5": "Dynamický",
+    "label6": "Stabilní",
+    "label7": "Flexibilní",
+    "label8": "Precizní",
+
+    "journey_header": "Cesta",
+    "journey1": "Projekťákem náhodou",
+    "journey2": "Na návštěvě u protinožců",
+    "journey3": "Život digitálního nomáda a tak dale a tak dale",
+    "journey4": "Studentská léta",
+    "journey5": "První stáž ve Škoda Auto!",
+
+    "etymology_header":"Etymologie",
+    "etymology_content":"Proč Neoprotero? Máte rádi příběhy (ze) života?\n\nNeoproterozoikum označuje dlouhé období evoluce. Během Neoproterozoika se život začal přeskupovat a vyvinuly se první mnohobuněčné organismy. Změny na Zemi byly dalekosáhlé a mnoho starších kmenů organismů čelilo vyhynutí.\n\nPřipomíná nám, jak svět se neustále mění a my se měníme s ním.",
+
+    "contact_header": "Kontakt",
+    "contact_content": "Potřebujete najmout zvíře pro váš další projekt?",
+    "footer": "© Kryštof Brzák 2025 IČO: 22433805"
+
+
+  },
+  "en": {
+    "title": "Welcome to my website",
+    "subtitle": "Hello! This is the English version.",
+    "s": "neco",
+    "description": "You can switch languages anytime using the buttons above.",
+    "profile_header": "Profile",
+    "profile_content": "Profile content",
+    "journey_header": "Journey",
+    "etymology_header": "Etymology",
+    "etymology_content":"Etymologie",
+    "contact_header": "Contact"
+  },
+  "de": {
+    "title": "Willkommen auf meiner Webseite",
+    "subtitle": "deutsche version",
+    "s": "neco",
+    "description": "Puedes cambiar de idioma en cualquier momento usando los botones de arriba.",
+    "profile_header": "Das Profil",
+    "profile_content": "Profil Inhalt",
+    "journey_header": "Der Weg",
+    "etymology_header": "Die Etymologie",
+    "etymology_content":"Die Etymologie",
+    "contact_header": "Der Kontakt"
+  }
+}
