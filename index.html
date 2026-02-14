@@ -24,14 +24,14 @@
 <!-- Navigation -->
 <header class="header">
     <div>
-        <img src="photos/monogram.png" alt="KB" class="monogram">
+        <img src="photos/monogram.png" alt="KB" class="monogram" href="#profile">
     </div>
 
     <nav id="nav-menu" class="nav">
-        <a href="#profile" class="scroll" data-translate="menu_profile"></a>
-        <a href="#journey" class="scroll" data-translate="menu_journey"></a>
-        <a href="#etymology" class="scroll" data-translate="menu_etymology"></a>
-        <a href="#contact" class="scroll" data-translate="menu_contact"></a>
+        <a href="#profile" class="scroll" data-translate="menu.profile"></a>
+        <a href="#journey" class="scroll" data-translate="menu.journey"></a>
+        <a href="#etymology" class="scroll" data-translate="menu.etymology"></a>
+        <a href="#contact" class="scroll" data-translate="menu.contact"></a>
         <div class="lang-dropdown">
             <div class="selected-lang">
                 <img src="flags/icons8-czech-republic-50.png" class="flag" data-lang="cs" alt="Czech">
@@ -50,9 +50,6 @@
     <div class="hamburger" id="hamburger">
         ☰
     </div>
-
-
-
 </header>
 
 <!-- Menu and Language switcher -->
@@ -95,86 +92,123 @@
 
 <body>
 <!--    <img src="photos/prague_background.jpg" class="background_photo" alt="Nothing">-->
-    <header>
-
-        <h1 data-translate="title"></h1>
-        <p data-translate="subtitle"></p>
-        <p data-translate="s"></p>
-
-    </header>
 
     <div class="container">
         <section id="profile" class="section">
-            <h2 data-translate="profile_header"></h2>
+            <h2 data-translate="profile.header"></h2>
             <div class="card-pack">
-                <div id=profile_photo_card class="card">
+                <div id=profile_photo_card class="card profile_card">
                     <img src="photos/profile_small_nobg.png" alt="Profile" class="profile_photo"/>
                     <!-- Rounded rectangle label -->
-                    <div class="label label-rect" data-translate="tag">
+                    <div class="label label-rect" data-depth="0.1" data-translate="profile.tag">
 
                     </div>
-                    <div class="label label-rect2">
+                    <div class="label label-rect2" data-depth="0.1">
 
                     </div>
                     <!-- Pentagon label -->
-                    <div class="label label-pentagon">
-                        <img class="label jet" src="photos/jet.png", alt="jet">
+                    <div class="label label-pentagon" data-depth="0.2">
+                        <img class="label jet" src="photos/jet.png" alt="jet">
                     </div>
 
-                    <div class="label label-pentagon2">
+                    <div class="label label-pentagon2" data-depth="0.3">
                     </div>
 
                 </div>
+
                 <div class="card">
-                    <p data-translate="profile_content"></p>
+                    <p data-translate="profile.content"></p>
                 </div>
-                <div id="traits" class="card">
-                    <div class="trait">
+
+                <h3>Tech stack</h3>
+                <div class="card">
+                    <div class="circle-scene" id="circleScene">
+                        <div class="circle-item">
+<!--                            <div class="circle-inner">HTML</div>-->
+                            <img src="flags/icons8-chatgpt-50_2x.png" alt="gpt">
+                            <p data-translate="tech.gpt"></p>
+                        </div>
+                        <div class="circle-item">
+                            <img src="flags/icons8-python-48_2x.png" alt="python">
+                            <p data-translate="tech.python"></p>
+                        </div>
+                        <div class="circle-item">
+                            <img src="flags/icons8-sql-60_2x.png" alt="sql">
+                            <p data-translate="tech.sql"></p>
+                        </div>
+
+                        <div class="circle-item">
+                            <img src="flags/icons8-git-50_2x.png" alt="git">
+                            <p data-translate="tech.git"></p>
+                        </div>
+                        <div class="circle-item">
+                            <img src="flags/icons8-devops-50_2x.png" alt="devops">
+                            <p data-translate="tech.devops"></p>
+                        </div>
+                        <div class="circle-item">
+                            <img src="flags/icons8-power-bi-50_2x.png" alt="powerbi">
+                            <p data-translate="tech.powerbi"></p>
+                        </div>
+                        <div class="circle-item">
+                            <img src="flags/icons8-postman-api-100.png" alt="api">
+                            <p data-translate="tech.api"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <p data-translate="profile.content2"> content</p>
+                </div>
+
+                <h3 data-translate="profile.header2"></h3>
+                <div id="traits" class="card traits">
+                    <div class="trait" data-depth="0.1">
                         <div class="trait-labels"  style="--left-weight: 600;
                          --right-weight: 800;
                          --left-size: 0.85rem;
                         --right-size: 1rem;">
-                            <span data-translate="label1"></span>
-                            <span data-translate="label2"></span>
+                            <span data-translate="traits.label1"></span>
+                            <span data-translate="traits.label2"></span>
                         </div>
                         <div class="slider">
                             <div class="fill" style="--value: 80%"></div>
                         </div>
                     </div>
 
-                    <div class="trait">
+                    <div class="trait" data-depth="0.2">
                         <div class="trait-labels" style="--left-weight: 600;
                          --right-weight: 800;
                          --left-size: 0.85rem;
                         --right-size: 1rem;">
-                            <span data-translate="label3"></span>
-                            <span data-translate="label4"></span>
+                            <span data-translate="traits.label3"></span>
+                            <span data-translate="traits.label4"></span>
                         </div>
                         <div class="slider">
                             <div class="fill" style="--value: 75%"></div>
                         </div>
                     </div>
 
-                    <div class="trait">
+                    <div class="trait" data-depth="0.3">
                         <div class="trait-labels" style="--left-weight: 800;
                          --right-weight: 600;
                          --left-size: 1rem;
                         --right-size: 0.85rem;">
-                            <span data-translate="label5"></span>
-                            <span data-translate="label6"></span>
+                            <span data-translate="traits.label5"></span>
+                            <span data-translate="traits.label6"></span>
                         </div>
                         <div class="slider">
                             <div class="fill" style="--value: 30%"></div>
                         </div>
                     </div>
 
-                    <div class="trait">
+                    <div class="trait" data-depth="0.4">
                         <div class="trait-labels" style="--left-weight: 800;
                          --right-weight: 600;
                          --left-size: 1rem;
                         --right-size: 0.85rem;">
-                            <span data-translate="label7"></span>
-                            <span data-translate="label8"></span>
+                            <span data-translate="traits.label7"></span>
+                            <span data-translate="traits.label8"></span>
                         </div>
                         <div class="slider">
                             <div class="fill" style="--value: 40%"></div>
@@ -183,40 +217,71 @@
                 </div>
 
                 <div class="card">
-                    <p data-translate="profile_content2"></p>
+                    <p data-translate="profile.content3"></p>
                 </div>
             </div>
         </section>
 
         <section id="journey" class="section">
-            <h2 data-translate="journey_header">Cesta</h2>
+            <h2 data-translate="journey.header">Cesta</h2>
 
             <div class="timeline">
+                    <div class="timeline-axis"></div>
                     <div class="timeline-item right">
+                        <div class="timeline-text">
                         <h3 class="timeline-date">2024</h3>
-                        <p data-translate="journey1"></p>
+                        <p data-translate="journey.journey1"></p>
+                        </div>
+
+                        <div class="timeline-image">
+                            <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
+                        </div>
+
                     </div>
 
                     <div class="timeline-item left">
-                        <h3 class="timeline-date">2023</h3>
-                        <p data-translate="journey2"></p>
-                        <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
+                        <div class="timeline-text">
+                            <h3 class="timeline-date">2023</h3>
+                            <p data-translate="journey.journey2"></p>
+                        </div>
+
+                        <div class="timeline-image">
+                            <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
+                        </div>
                     </div>
 
                     <div class="timeline-item right">
+                        <div class="timeline-text">
                         <h3 class="timeline-date">2021</h3>
-                        <p data-translate="journey3"></p>
-                        <img alt="WhatsApp" src="photos/nomad2.jpg" class="timeline_photo">
+                        <p data-translate="journey.journey3"></p>
+
+                        </div>
+
+                        <div class="timeline-image">
+                            <img alt="WhatsApp" src="photos/nomad2.jpg" class="timeline_photo">
+                        </div>
                     </div>
 
                     <div class="timeline-item left">
+                        <div class="timeline-text">
                         <h3 class="timeline-date">2017</h3>
-                        <p data-translate="journey4"></p>
+                        <p data-translate="journey.journey4"></p>
+                        </div>
+
+                        <div class="timeline-image">
+                            <img alt="WhatsApp" src="photos/sydney.jpg" class="timeline_photo">
+                        </div>
                     </div>
                     <div class="timeline-item right">
+                        <div class="timeline-text">
                         <h3 class="timeline-date">2016</h3>
-                        <p data-translate="journey5"></p>
-                        <img alt="WhatsApp" src="photos/staz.jpg" class="timeline_photo">
+                        <p data-translate="journey.journey5"></p>
+
+                        </div>
+
+                        <div class="timeline-image">
+                            <img alt="WhatsApp" src="photos/staz.jpg" class="timeline_photo">
+                        </div>
                     </div>
             </div>
         </section>
@@ -224,14 +289,14 @@
         <section id="etymology" class="canv_section">
             <canvas id="cellCanvas" class="canvas"></canvas>
             <div class="behind_canvas">
-                <h2 data-translate="etymology_header"></h2>
-                <p id=emycontent" data-translate="etymology_content"></p>
+                <h2 data-translate="etymology.header"></h2>
+                <p id=emycontent" data-translate="etymology.content"></p>
             </div>
         </section>
 
         <section id="contact" class="section">
-            <h2 data-translate="contact_header">Kontakt</h2>
-            <p data-translate="contact_content"></p>
+            <h2 data-translate="contact.header">Kontakt</h2>
+            <p data-translate="contact.content"></p>
             <div class="contact-options">
                 <a class="jump" href="https://wa.me/420721903790" target="_blank"><img alt="WhatsApp" src="flags/whatsapp.png" class="network"></a>
                 <a class="jump" href="https://www.linkedin.com/in/krystof-brzak" target="_blank"><img alt="Linkedin" src="flags/linkedin.png" class="network"></a>
@@ -263,22 +328,26 @@
 
     </script>
     <script>
-        const faders = document.querySelectorAll('.timeline-item');
-        const appearOptions = { threshold: 0.2 };
+        const faders = document.querySelectorAll('.timeline-item, .card, .contact-options');
+        const appearOnScroll = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            },
+            {
+                rootMargin: '-120px 0px -20% 0px',
+                threshold: 0
+            }
+        );
 
-        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => appearOnScroll.observe(fader));
+        faders.forEach(el => appearOnScroll.observe(el));
     </script>
 
     <script>
-        document.querySelectorAll('.scroll').forEach(link => {
+        document.querySelectorAll('.scroll, .monogram').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href'))
@@ -326,6 +395,103 @@
     <!-- Load language -->
     <script src="javascripts.js"></script>
     <script src="life_simulator.js"></script>
+
+<script>
+    const scene = document.querySelector('.traits');
+    const layers = document.querySelectorAll('.trait-labels');
+
+    scene.addEventListener('mousemove', (e) => {
+        const rect = scene.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const moveX = (x - centerX) / centerX;
+        const moveY = (y - centerY) / centerY;
+
+        layers.forEach(layer => {
+            const depth = layer.dataset.depth;
+            const translateX = -moveX * depth * 30;
+            const translateY = -moveY * depth * 30;
+
+            layer.style.transform = `
+            translate(-50%, -50%)
+            translate(${translateX}px, ${translateY}px)`;
+
+            scene.style.transform = `
+            rotateX(${moveY * 15}deg)
+            rotateY(${moveX * 15}deg)
+        `;
+        });
+    });
+</script>
+
+<script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav a');
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+
+                    navLinks.forEach(link => {
+                        link.classList.toggle(
+                            'active',
+                            link.getAttribute('href') === `#${id}`
+                        );
+                    });
+                }
+            });
+        },
+        {
+            /*threshold: 0.6  kolik sekce musí být vidět */
+            rootMargin: "-100px 0px -40% 0px",
+            threshold: 0
+        }
+    );
+
+    sections.forEach(section => observer.observe(section));
+</script>
+
+
+<script>
+    function updateCircleLayout() {
+        const container = document.getElementById('circleScene');
+        const items = container.querySelectorAll('.circle-item');
+        const count = items.length;
+
+        const width = container.offsetWidth;
+        const height = container.offsetHeight;
+
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        // radius necháme s paddingem od kraje
+        const radius = Math.min(width, height) / 2 - 10;
+
+        items.forEach((item, i) => {
+            const angle = (i / count) * (2 * Math.PI) - (Math.PI / 2);
+
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+
+            item.style.left = `${x}px`;
+            item.style.top = `${y}px`;
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', updateCircleLayout);
+    window.addEventListener('resize', updateCircleLayout);
+
+</script>
+
+
+
 
 
 </body>

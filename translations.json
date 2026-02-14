@@ -1,66 +1,153 @@
 {
   "cs": {
-    "menu_profile": "Profil",
-    "menu_journey": "Cesta",
-    "menu_etymology": "Etymologie",
-    "menu_contact": "Kontakt",
-
-    "title": "Vítejte na mém webu",
-    "subtitle": "",
-    "s": "",
-    "description": "You can switch languages anytime using the buttons above.",
-    "profile_header": "Profil",
-    "tag": "Kryštof Brzák",
-    "profile_content": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
-    "profile_content2": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
-
-    "label1": "Spolupracující",
-    "label2": "Nezávislý",
-    "label3": "Rezervovaný",
-    "label4": "Družný",
-    "label5": "Dynamický",
-    "label6": "Stabilní",
-    "label7": "Flexibilní",
-    "label8": "Precizní",
-
-    "journey_header": "Cesta",
-    "journey1": "Projekťákem náhodou",
-    "journey2": "Na návštěvě u protinožců",
-    "journey3": "Život digitálního nomáda a tak dale a tak dale",
-    "journey4": "Studentská léta",
-    "journey5": "První stáž ve Škoda Auto!",
-
-    "etymology_header":"Etymologie",
-    "etymology_content":"Proč Neoprotero? Máte rádi příběhy (ze) života?\n\nNeoproterozoikum označuje dlouhé období evoluce. Během Neoproterozoika se život začal přeskupovat a vyvinuly se první mnohobuněčné organismy. Změny na Zemi byly dalekosáhlé a mnoho starších kmenů organismů čelilo vyhynutí.\n\nPřipomíná nám, jak svět se neustále mění a my se měníme s ním.",
-
-    "contact_header": "Kontakt",
-    "contact_content": "Potřebujete najmout zvíře pro váš další projekt?",
-    "footer": "© Kryštof Brzák 2025 IČO: 22433805"
-
-
+    "menu": {
+      "profile": "Profil",
+      "journey": "Cesta",
+      "etymology": "Etymologie",
+      "contact": "Kontakt"
+    },
+    "profile": {
+      "header": "Profil",
+      "tag": "Kryštof Brzák",
+      "content": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
+      "header2": "",
+      "content2": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English."
+    },
+    "tech": {
+      "gpt": "Jazykové modely a vibe coding",
+      "python": "Python",
+      "sql": "To nestárne",
+      "git": "Někde je to potřeba verzovat",
+      "devops": "Tickety, sprinty, buildy... you know it",
+      "powerbi": "PowerBI, DAX, M",
+      "api": "REST API"
+    },
+    "traits": {
+      "label1": "Spolupracující",
+      "label2": "Nezávislý",
+      "label3": "Rezervovaný",
+      "label4": "Družný",
+      "label5": "Dynamický",
+      "label6": "Stabilní",
+      "label7": "Flexibilní",
+      "label8": "Precizní"
+    },
+    "journey": {
+      "header": "Cesta",
+      "item1": "Projekťákem náhodou",
+      "item2": "Na návštěvě u protinožců",
+      "item3": "Život digitálního nomáda a tak dale a tak dale",
+      "item4": "Studentská léta",
+      "item5": "První stáž ve Škoda Auto!"
+    },
+    "etymology": {
+      "header": "Etymologie",
+      "content": "Proč Neoprotero? Máte rádi příběhy (ze) života?\n\nNeoproterozoikum označuje dlouhé období evoluce. Během Neoproterozoika se život začal přeskupovat a vyvinuly se první mnohobuněčné organismy. Změny na Zemi byly dalekosáhlé a mnoho starších kmenů organismů čelilo vyhynutí.\n\nPřipomíná nám, jak svět se neustále mění a my se měníme s ním."
+    },
+    "contact": {
+      "header": "Kontakt",
+      "content": "Potřebujete najmout zvíře pro váš další projekt?"
+    },
+    "footer": "© Kryštof Brzák 2026 IČO: 22433805"
   },
+
   "en": {
-    "title": "Welcome to my website",
-    "subtitle": "Hello! This is the English version.",
-    "s": "neco",
-    "description": "You can switch languages anytime using the buttons above.",
-    "profile_header": "Profile",
-    "profile_content": "Profile content",
-    "journey_header": "Journey",
-    "etymology_header": "Etymology",
-    "etymology_content":"Etymologie",
-    "contact_header": "Contact"
+    "menu": {
+      "profile": "Profile",
+      "journey": "Journey",
+      "etymology": "Etymology",
+      "contact": "Contact"
+    },
+    "profile": {
+      "header": "Profile",
+      "tag": "Kryštof Brzák",
+      "content": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
+      "content2": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English."
+    },
+    "tech": {
+      "gpt": "ChatGPT",
+      "python": "Python",
+      "sql": "SQL",
+      "git": "Git",
+      "devops": "DevOps",
+      "powerbi": "Power BI"
+    },
+    "traits": {
+      "label1": "Collaborative",
+      "label2": "Independent",
+      "label3": "Reserved",
+      "label4": "Outgoing",
+      "label5": "Dynamic",
+      "label6": "Stable",
+      "label7": "Flexible",
+      "label8": "Precise"
+    },
+    "journey": {
+      "header": "Journey",
+      "item1": "Accidentally became a project manager",
+      "item2": "Visiting Australia",
+      "item3": "Life of a digital nomad and so on and so on",
+      "item4": "Student years",
+      "item5": "First internship at Škoda Auto!"
+    },
+    "etymology": {
+      "header": "Etymology",
+      "content": "Why Neoprotero? Do you like life stories?\n\nThe Neoproterozoic marks a long period of evolution. During the Neoproterozoic era, life began to reorganize and the first multicellular organisms evolved. Changes on Earth were profound and many older groups of organisms faced extinction.\n\nIt reminds us how the world constantly changes and we change with it."
+    },
+    "contact": {
+      "header": "Contact",
+      "content": "Looking to hire someone for your next project?"
+    },
+    "footer": "© Kryštof Brzák 2026 Company Registration Number: 22433805"
   },
+
   "de": {
-    "title": "Willkommen auf meiner Webseite",
-    "subtitle": "deutsche version",
-    "s": "neco",
-    "description": "Puedes cambiar de idioma en cualquier momento usando los botones de arriba.",
-    "profile_header": "Das Profil",
-    "profile_content": "Profil Inhalt",
-    "journey_header": "Der Weg",
-    "etymology_header": "Die Etymologie",
-    "etymology_content":"Die Etymologie",
-    "contact_header": "Der Kontakt"
+    "menu": {
+      "profile": "Profil",
+      "journey": "Werdegang",
+      "etymology": "Etymologie",
+      "contact": "Kontakt"
+    },
+    "profile": {
+      "header": "Profil",
+      "tag": "Kryštof Brzák",
+      "content": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
+      "content2": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English."
+    },
+    "tech": {
+      "gpt": "ChatGPT",
+      "python": "Python",
+      "sql": "SQL",
+      "git": "Git",
+      "devops": "DevOps",
+      "powerbi": "Power BI"
+    },
+    "traits": {
+      "label1": "Kooperativ",
+      "label2": "Unabhängig",
+      "label3": "Zurückhaltend",
+      "label4": "Gesellig",
+      "label5": "Dynamisch",
+      "label6": "Stabil",
+      "label7": "Flexibel",
+      "label8": "Präzise"
+    },
+    "journey": {
+      "header": "Werdegang",
+      "item1": "Zufällig Projektmanager geworden",
+      "item2": "Besuch in Australien",
+      "item3": "Leben als digitaler Nomade und so weiter und so fort",
+      "item4": "Studienjahre",
+      "item5": "Erstes Praktikum bei Škoda Auto!"
+    },
+    "etymology": {
+      "header": "Etymologie",
+      "content": "Warum Neoprotero? Mögen Sie Lebensgeschichten?\n\nDas Neoproterozoikum bezeichnet eine lange Evolutionsperiode. Während dieser Zeit begann sich das Leben neu zu organisieren und die ersten mehrzelligen Organismen entwickelten sich. Die Veränderungen auf der Erde waren tiefgreifend und viele ältere Organismengruppen starben aus.\n\nEs erinnert uns daran, dass sich die Welt ständig verändert – und wir uns mit ihr."
+    },
+    "contact": {
+      "header": "Kontakt",
+      "content": "Suchen Sie Unterstützung für Ihr nächstes Projekt?"
+    },
+    "footer": "© Kryštof Brzák 2026 Firmen-Ident.-Nr.: 22433805"
   }
 }
