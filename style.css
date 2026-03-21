@@ -147,12 +147,13 @@ img {
         transition: background-color 0.25s ease, color 0.25s ease;
     }
 
-    .nav a:hover {
-        background-color: #023b42;
-    }
 
     .nav a.active {
-        background-color: #023b42;
+        background: radial-gradient(
+                circle at top left,
+                #023b42,
+                transparent 120%
+        );
         color: #FFF5D9;
     }
 
@@ -162,10 +163,13 @@ img {
         display: inline-block;
         text-decoration: none;
         color: #FFF5D9;
+        background: transparent;
+        transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     .scroll:hover {
-        background-color: #023b42;
+        background: #FFF5D9;
+        color: #023b42;
         text-decoration: none;
     }
 
@@ -709,10 +713,13 @@ img {
         display: inline-block;
         text-decoration: none;
         color: #FFF5D9;
+        background: transparent;
+        transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     .scroll:hover {
-        background-color: #023b42;
+        background: #FFF5D9;
+        color: #023b42;
         text-decoration: none;
     }
 

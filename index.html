@@ -123,33 +123,33 @@
                 <h3>Tech stack</h3>
                 <div class="card">
                     <div class="circle-scene" id="circleScene">
-                        <div class="circle-item">
+                        <div class="circle-item" data-depth="0.1">
 <!--                            <div class="circle-inner">HTML</div>-->
                             <img src="flags/icons8-chatgpt-50_2x.png" alt="gpt">
                             <p data-translate="tech.gpt"></p>
                         </div>
-                        <div class="circle-item">
+                        <div class="circle-item" data-depth="0.1">
                             <img src="flags/icons8-python-48_2x.png" alt="python">
                             <p data-translate="tech.python"></p>
                         </div>
-                        <div class="circle-item">
+                        <div class="circle-item" data-depth="0.1">
                             <img src="flags/icons8-sql-60_2x.png" alt="sql">
                             <p data-translate="tech.sql"></p>
                         </div>
 
-                        <div class="circle-item">
+                        <div class="circle-item" data-depth="0.1">
                             <img src="flags/icons8-git-50_2x.png" alt="git">
                             <p data-translate="tech.git"></p>
                         </div>
-                        <div class="circle-item">
+                        <div class="circle-item" data-depth="0.1">
                             <img src="flags/icons8-devops-50_2x.png" alt="devops">
                             <p data-translate="tech.devops"></p>
                         </div>
-                        <div class="circle-item">
+                        <div class="circle-item" data-depth="0.1">
                             <img src="flags/icons8-power-bi-50_2x.png" alt="powerbi">
                             <p data-translate="tech.powerbi"></p>
                         </div>
-                        <div class="circle-item">
+                        <div class="circle-item" data-depth="0.1">
                             <img src="flags/icons8-postman-api-100.png" alt="api">
                             <p data-translate="tech.api"></p>
                         </div>
@@ -397,8 +397,8 @@
     <script src="life_simulator.js"></script>
 
 <script>
-    const scene = document.querySelector('.traits');
-    const layers = document.querySelectorAll('.trait-labels');
+    const scene = document.querySelectorAll('.traits, .circle-scene');
+    const layers = document.querySelectorAll('.trait-labels, .circle-item');
 
     scene.addEventListener('mousemove', (e) => {
         const rect = scene.getBoundingClientRect();
