@@ -7,12 +7,12 @@
       "contact": "Kontakt"
     },
     "profile": {
-      "header": "Profil",
+      "header": "Ahoj, přistáli jste na webu projeťáka Kryštofa",
       "tag": "Kry\u0161tof Brz\u00e1k",
-      "content": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
-      "header2": "",
-      "content2": "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".\n\nEven though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.",
-      "content3": ""
+      "content1": "Přetvářím vize v realitu",
+      "content2": "Vedení týmu k úspěšnému cíli",
+      "content3": "Vývoj systémů na zelené louce",
+      "content4": "Inženýr • Manažer • Leader"
     },
     "tech": {
       "gpt": "Jazykov\u00e9 modely a vibe coding",
@@ -35,14 +35,14 @@
     },
     "journey": {
       "header": "Cesta",
-      "journey1": "Projek\u0165\u00e1kem n\u00e1hodou",
-      "journey2": "Na n\u00e1v\u0161t\u011bv\u011b u protino\u017ec\u016f",
-      "journey3": "\u017divot digit\u00e1ln\u00edho nom\u00e1da a tak dale a tak dale",
-      "journey4": "Studentsk\u00e1 l\u00e9ta",
-      "journey5": "Prvn\u00ed st\u00e1\u017e ve \u0160koda Auto!",
+      "journey1": "Přestože byl pohovor původně na data inženýra, projekťák nakonec sedl mnohem lépe. \nSpolupráce s podnikateli na nových nápadech a start-upech je pro mě skvělé a inspirativní vyžití.\n",
+      "journey2": "Po završení úspěšné spolupráce s IDC CEMA jsem zkoušel své štěstí v zemi klokanů a velkých pavouků. Poslední velká cesta přes půl světa vedla přes rozlehlou a barevnou asii. Navzdory nepopsatelnému chaosu Pákistánu jsem měl příležitost vidět K2, druhou nejvyšší horu světa.\n\nAustrálie, pro mnohé země zaslíbená, mě naučila kromě surfování a farmaření i trpělivosti, která je nezbytná pokud má člověk obstát v konkurenci. A nakonec jsem si připomněl i své vlastní kulturní kořeny a to jak jsem na ně hrdý.",
+      "journey3": "Nomádství byla největší příležitost v nešťastných kovidových časech. Obrovská svoboda byla v šíleném kontrastu s lockdowny v České republice.\n\nÉra plná dobrodružství a skvělých lidí. Setkal jsem se s nejpestřejší sortou lidí jakou si snad lze představit. Od nomádů přežívajících z prodeje ručně vyráběných náramků až po začínající podnikatele a akademiky.\n\nPřespal jsem pod mostem, v kostarické džungli i v pronajatých vilách s bazénem a výhledem na oceán. Je trochu zázrak, že to notebook, na kterém jsem celou dobu vyvíjel, to celé přežil.",
+      "journey4": "",
+      "journey5": "Sen každého studenta! Etablovaná firma nabízí příležitosti pro každého zelenáče a němčina je tady velkou výhodou. Prošel jsem si odděleními softwarového vývoje i mezinárodního marketingu. \n\nModerní obchodní koncepty zpracování telematických dat dodaly stáži perspektivu i námět na diplomovou práci.",
       "item1": "Projek\u0165\u00e1kem n\u00e1hodou",
       "item2": "Na n\u00e1v\u0161t\u011bv\u011b u protino\u017ec\u016f",
-      "item3": "\u017divot digit\u00e1ln\u00edho nom\u00e1da a tak dale a tak dale",
+      "item3": "Život digitálního nomáda",
       "item4": "Studentsk\u00e1 l\u00e9ta",
       "item5": "Prvn\u00ed st\u00e1\u017e ve \u0160koda Auto!"
     },
@@ -92,14 +92,14 @@
     },
     "journey": {
       "header": "Journey",
-      "journey1": "Accidentally became a project manager",
-      "journey2": "Visiting Australia",
-      "journey3": "Life of a digital nomad and so on and so on",
-      "journey4": "Student years",
-      "journey5": "First internship at \u0160koda Auto!",
+      "journey1": "",
+      "journey2": "",
+      "journey3": "",
+      "journey4": "",
+      "journey5": "",
       "item1": "Accidentally became a project manager",
       "item2": "Visiting Australia",
-      "item3": "Life of a digital nomad and so on and so on",
+      "item3": "Life of a digital nomad",
       "item4": "Student years",
       "item5": "First internship at \u0160koda Auto!"
     },
@@ -149,14 +149,14 @@
     },
     "journey": {
       "header": "Werdegang",
-      "journey1": "Zuf\u00e4llig Projektmanager geworden",
-      "journey2": "Besuch in Australien",
-      "journey3": "Leben als digitaler Nomade und so weiter und so fort",
-      "journey4": "Studienjahre",
-      "journey5": "Erstes Praktikum bei \u0160koda Auto!",
+      "journey1": "",
+      "journey2": "",
+      "journey3": "",
+      "journey4": "",
+      "journey5": "",
       "item1": "Zuf\u00e4llig Projektmanager geworden",
       "item2": "Besuch in Australien",
-      "item3": "Leben als digitaler Nomade und so weiter und so fort",
+      "item3": "Leben als digitaler Nomade",
       "item4": "Studienjahre",
       "item5": "Erstes Praktikum bei \u0160koda Auto!"
     },
@@ -171,3 +171,4 @@
     "footer": "\u00a9 Kry\u0161tof Brz\u00e1k 2026 Firmen-Ident.-Nr.: 22433805"
   }
 }
+
