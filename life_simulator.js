@@ -131,27 +131,105 @@ let mergeEvents = [];
 // { x,y,r, alpha, color }
 let deathEvents = [];
 
+// simple bubble-pop events
+// { x, y, progress, maxRadius, particles: [{ angle, speed, radius }] }
+let popEvents = [];
+
 // ==========================
 // INPUT
 // ==========================
+const canvas = app.view;
 const mouse = { x: -9999, y: -9999 };
+let pointerActive = false;
+
+function resetMouse() {
+    mouse.x = -9999;
+    mouse.y = -9999;
+}
 
 function updateMouse(e) {
+    if (!pointerActive) return;
+
     if (e.touches && e.touches.length) {
         mouse.x = e.touches[0].clientX;
         mouse.y = e.touches[0].clientY;
-    } else {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
+        return;
     }
+
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
 }
-window.addEventListener("mousemove", updateMouse);
-window.addEventListener("touchmove", updateMouse, { passive: true });
-window.addEventListener("touchstart", updateMouse, { passive: true });
-window.addEventListener("mouseleave", () => {
-    mouse.x = -9999;
-    mouse.y = -9999;
-});
+
+function spawnBubblePop(x, y, radius) {
+    const particleCount = 8;
+    const particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+        particles.push({
+            angle: (Math.PI * 2 * i) / particleCount,
+            speed: radius * (0.6 + Math.random() * 0.4),
+            radius: Math.max(2, radius * 0.14)
+        });
+    }
+
+    popEvents.push({
+        x,
+        y,
+        progress: 0,
+        maxRadius: radius * 1.8,
+        particles
+    });
+}
+
+function removeCellAtPointer(x, y) {
+    for (let i = cells.length - 1; i >= 0; i--) {
+        const cell = cells[i];
+        const dx = x - cell.x;
+        const dy = y - cell.y;
+
+        if (Math.hypot(dx, dy) <= cell.radius) {
+            deathEvents.push({
+                x: cell.x,
+                y: cell.y,
+                r: cell.radius,
+                alpha: 0.35,
+                color: cell.type === "big" ? 0xFFF5D9 : 0x88d4c7
+            });
+
+            spawnBubblePop(cell.x, cell.y, cell.radius);
+            cell.destroy();
+            cells.splice(i, 1);
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function activatePointer(e) {
+    const point = e.touches && e.touches.length ? e.touches[0] : e;
+    const hitCell = removeCellAtPointer(point.clientX, point.clientY);
+
+    if (hitCell) {
+        pointerActive = false;
+        resetMouse();
+        return;
+    }
+
+    pointerActive = true;
+    updateMouse(e);
+}
+
+function deactivatePointer() {
+    pointerActive = false;
+    resetMouse();
+}
+
+canvas.addEventListener("pointerdown", activatePointer);
+canvas.addEventListener("pointermove", updateMouse);
+canvas.addEventListener("pointerleave", deactivatePointer);
+window.addEventListener("pointerup", deactivatePointer);
+window.addEventListener("pointercancel", deactivatePointer);
 
 // ==========================
 // COLLISIONS + SMALL → BIG MERGE
@@ -302,6 +380,34 @@ function updateAndDrawDeaths() {
     }
 }
 
+function updateAndDrawPops() {
+    for (let i = popEvents.length - 1; i >= 0; i--) {
+        const pop = popEvents[i];
+        pop.progress += 0.08;
+
+        const t = Math.min(pop.progress, 1);
+        const ringRadius = pop.maxRadius * t;
+        const alpha = 1 - t;
+
+        transitions.lineStyle(2, 0xFFF5D9, alpha);
+        transitions.drawCircle(pop.x, pop.y, ringRadius);
+
+        for (let j = 0; j < pop.particles.length; j++) {
+            const particle = pop.particles[j];
+            const px = pop.x + Math.cos(particle.angle) * particle.speed * t;
+            const py = pop.y + Math.sin(particle.angle) * particle.speed * t;
+
+            transitions.beginFill(0xFFF5D9, alpha * 0.8);
+            transitions.drawCircle(px, py, particle.radius * (1 - t * 0.35));
+            transitions.endFill();
+        }
+
+        if (pop.progress >= 1) {
+            popEvents.splice(i, 1);
+        }
+    }
+}
+
 // ==========================
 // MERGE EVENTS (two small → one big)
 // ==========================
@@ -380,6 +486,7 @@ app.ticker.add(() => {
 
     // draw death fades & merge animations
     updateAndDrawDeaths();
+    updateAndDrawPops();
     updateAndDrawMerges();
 
     // draw all normal cells

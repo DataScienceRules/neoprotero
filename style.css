@@ -168,8 +168,12 @@ img {
     }
 
     .scroll:hover {
-        background: #FFF5D9;
-        color: #023b42;
+        background: radial-gradient(
+                circle at top left,
+                #023b42,
+                transparent 120%
+        );
+        color: #FFF5D9;
         text-decoration: none;
     }
 
@@ -177,7 +181,7 @@ img {
     /* Sections */
     .section {
         padding: 2rem 1.5rem 1.5rem; /* extra top padding to compensate for fixed menu */
-        margin: 3rem 13rem 1rem;
+        margin: 3rem 16rem 1rem;
         border-width: 20px;
         min-height: 30vh;
         display: block;
@@ -202,7 +206,7 @@ img {
 
     .canv_section {
         padding: 6rem 1.5rem 1.5rem; /* extra top padding to compensate for fixed menu */
-        margin: 3rem 13rem 1rem;
+        margin: 3rem 16rem 1rem;
         position: relative;
         /*background-color: #023b42;*/
         border-radius: 30px;
@@ -494,6 +498,19 @@ img {
     /* =========================
    TIMELINE – DESKTOP (SYNCED WITH MOBILE)
    ========================= */
+    #profile_text_card p {
+        font-size: 20px;
+        padding-bottom: 3rem;
+    }
+    #profile_text_card2 {
+        text-align: right;
+    }
+    #profile_text_card4 {
+        text-align: center;
+
+    }
+
+
 
     .timeline {
         position: relative;
@@ -526,6 +543,11 @@ img {
         transition: opacity 1s ease, transform 1s ease;
     }
 
+    .timeline-text {
+        margin: 0 1rem 1rem 1rem;
+    }
+
+
     .timeline-item.left .timeline-text {
         grid-column: 1;
         text-align: right;
@@ -533,7 +555,7 @@ img {
 
     .timeline-item.left .timeline-image {
         grid-column: 3;
-        margin-top: 6rem;
+        margin-top: 5rem;
     }
 
     .timeline-item.right .timeline-text {
@@ -543,6 +565,7 @@ img {
 
     .timeline-item.right .timeline-image {
         grid-column: 1;
+        margin-top: 5rem;
     }
 
     .timeline-content {
@@ -554,6 +577,17 @@ img {
 
 
     .timeline-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fade-in-target {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in-target.visible {
         opacity: 1;
         transform: translateY(0);
     }
@@ -584,10 +618,21 @@ img {
         font-size: 1.6rem;
     }
 
+    .timeline-title {
+        font-size: 1.4rem;
+        margin: 0.4rem 0 0.6rem;
+        position: relative;
+        line-height: 1.35;
+    }
+
     /* Text */
     .timeline-item p {
         max-width: 700px;
         line-height: 1.6;
+    }
+
+    .timeline-item p:empty {
+        display: none;
     }
 
     /* Image */
@@ -647,6 +692,14 @@ img {
         border-width: 5px;
         position: relative;
         text-align: center;
+    }
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-10px);
     }
 }
 /* ----- --------------------------------------------- ----- */
@@ -903,6 +956,22 @@ img {
         margin: auto;
     }
 
+    /*.circle-scene {*/
+    /*    width: 320px;*/
+    /*    height: 320px;*/
+    /*    margin: 70px auto;*/
+    /*}*/
+
+    .circle-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    .circle-item {
+        margin-top: 3rem;
+    }
+
     /* Container */
     #profile_photo_card {
         display: block;
@@ -1106,8 +1175,16 @@ img {
         gap: 1rem;
         text-align: left;
         position: relative;
-        width: 80%;
+        width: 100%;
         padding-left: 20%;
+    }
+
+    .timeline-text {
+        order: 1;
+    }
+
+    .timeline-image {
+        order: 2;
     }
 
     .timeline-item::after {
@@ -1134,6 +1211,14 @@ img {
         padding: 0;
         color: #ffd0a8;
         margin-top: 1rem;
+    }
+
+    .timeline-title {
+        font-size: 1.05rem;
+        margin: 0.4rem 0 0.4rem;
+        text-align: left;
+        position: relative;
+        line-height: 1.35;
     }
 
     .timeline_photo {
