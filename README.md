@@ -1,4 +1,4 @@
-# neoprotero
+# Kryštof Brzák
 
 personal web repo
 
